@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de comer o último pedaço da sobremesa e esconder a embalagem vazia?"
+  },
+  {
+    "id": 2,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de causar uma discussão épica apenas pelo controlo do comando da televisão?"
+  },
+  {
+    "id": 3,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de soltar um pum e culpar imediatamente o animal de estimação ou outra pessoa?"
+  },
+  {
+    "id": 4,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de ter o quarto ou o carro num estado constante de desarrumação absoluta?"
+  },
+  {
+    "id": 5,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de ignorar o despertador repetidamente e acabar por acordar a casa inteira?"
+  },
+  {
+    "id": 6,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de esquecer a panela no lume ou a comida no forno e quase causar um desastre?"
+  },
+  {
+    "id": 7,
+    "categoria": "Caos Familiar",
+    "pergunta": "Quem é mais provável de estar sempre a reclamar da bagunça, mas ser o último a ajudar a arrumar?"
+  },
+  {
+    "id": 8,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de sobreviver por mais tempo e liderar um grupo num apocalipse zombie?"
+  },
+  {
+    "id": 9,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de ter uma crise de riso num momento ou lugar completamente inapropriado?"
+  },
+  {
+    "id": 10,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de se perder dentro do centro comercial num percurso que já fez dezenas de vezes?"
+  },
+  {
+    "id": 11,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de tropeçar no próprio pé e olhar para o chão a fingir que a culpa foi de um buraco?"
+  },
+  {
+    "id": 12,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de cantar a plenos pulmões no banho como se estivesse a atuar num concerto ao vivo?"
+  },
+  {
+    "id": 13,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de adormecer profundamente no sofá antes do filme chegar sequer a metade?"
+  },
+  {
+    "id": 14,
+    "categoria": "Humor",
+    "pergunta": "Quem é mais provável de tentar pregar um susto a alguém e acabar por ser o único a assustar-se?"
+  },
+  {
+    "id": 15,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de enviar acidentalmente uma mensagem embaraçosa ou crítica para a pessoa errada?"
+  },
+  {
+    "id": 16,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de esquecer completamente uma data de anos ou outra data crucial da família?"
+  },
+  {
+    "id": 17,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de estourar as poupanças todas a comprar algo de que manifestamente não precisava?"
+  },
+  {
+    "id": 18,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de chorar copiosamente a ver uma novela, um filme de drama ou até um simples anúncio?"
+  },
+  {
+    "id": 19,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de ser excessivamente competitivo e levar um jogo de tabuleiro ao extremo da discussão?"
+  },
+  {
+    "id": 20,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de não conseguir guardar um segredo até ao fim e ser o principal fofoqueiro da família?"
+  },
+  {
+    "id": 21,
+    "categoria": "Drama Leve",
+    "pergunta": "Quem é mais provável de inventar a pior desculpa possível para não comparecer a um almoço de domingo?"
+  }
+]

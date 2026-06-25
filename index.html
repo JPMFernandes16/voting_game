@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Voting Game - Edição Casa</title>
+    
+    <!-- Repositório Externo de Tipografia Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Ligação à Folha de Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Invólucro Flexbox primário para contenção em ecrãs 16:9 -->
+    <main class="tv-container">
+        
+        <!-- O bloco atómico onde os dados dinâmicos repousam e as animações ocorrem -->
+        <div id="card" class="question-card">
+            
+            <div class="category-wrapper">
+                <!-- Etiqueta contextual indicativa do tom psicológico da pergunta -->
+                <span id="categoria-badge" class="badge">A Inicializar...</span>
+            </div>
+            
+            <h1 id="pergunta-texto">A sincronizar com a base de dados...</h1>
+            
+            <!-- Zona de rodapé focada em utilitários de interação mecânica -->
+            <div class="instructions-footer">
+                <p>Prima <span class="key-hint">ESPAÇO</span> ou <span class="key-hint">ENTER</span> para avançar</p>
+                <button id="next-btn" class="tv-button">Nova Pergunta</button>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- O bloco lógico inserido sempre no sopé da página para evitar bloqueios de renderização -->
+    <script src="app.js"></script>
+    
+</body>
+</html>
