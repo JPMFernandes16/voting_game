@@ -1,107 +1,42 @@
 [
-  {
-    "id": 1,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de comer o último pedaço da sobremesa e esconder a embalagem vazia?"
-  },
-  {
-    "id": 2,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de causar uma discussão épica apenas pelo controlo do comando da televisão?"
-  },
-  {
-    "id": 3,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de soltar um pum e culpar imediatamente o animal de estimação ou outra pessoa?"
-  },
-  {
-    "id": 4,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de ter o quarto ou o carro num estado constante de desarrumação absoluta?"
-  },
-  {
-    "id": 5,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de ignorar o despertador repetidamente e acabar por acordar a casa inteira?"
-  },
-  {
-    "id": 6,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de esquecer a panela no lume ou a comida no forno e quase causar um desastre?"
-  },
-  {
-    "id": 7,
-    "categoria": "Caos Familiar",
-    "pergunta": "Quem é mais provável de estar sempre a reclamar da bagunça, mas ser o último a ajudar a arrumar?"
-  },
-  {
-    "id": 8,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de sobreviver por mais tempo e liderar um grupo num apocalipse zombie?"
-  },
-  {
-    "id": 9,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de ter uma crise de riso num momento ou lugar completamente inapropriado?"
-  },
-  {
-    "id": 10,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de se perder dentro do centro comercial num percurso que já fez dezenas de vezes?"
-  },
-  {
-    "id": 11,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de tropeçar no próprio pé e olhar para o chão a fingir que a culpa foi de um buraco?"
-  },
-  {
-    "id": 12,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de cantar a plenos pulmões no banho como se estivesse a atuar num concerto ao vivo?"
-  },
-  {
-    "id": 13,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de adormecer profundamente no sofá antes do filme chegar sequer a metade?"
-  },
-  {
-    "id": 14,
-    "categoria": "Humor",
-    "pergunta": "Quem é mais provável de tentar pregar um susto a alguém e acabar por ser o único a assustar-se?"
-  },
-  {
-    "id": 15,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de enviar acidentalmente uma mensagem embaraçosa ou crítica para a pessoa errada?"
-  },
-  {
-    "id": 16,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de esquecer completamente uma data de anos ou outra data crucial da família?"
-  },
-  {
-    "id": 17,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de estourar as poupanças todas a comprar algo de que manifestamente não precisava?"
-  },
-  {
-    "id": 18,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de chorar copiosamente a ver uma novela, um filme de drama ou até um simples anúncio?"
-  },
-  {
-    "id": 19,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de ser excessivamente competitivo e levar um jogo de tabuleiro ao extremo da discussão?"
-  },
-  {
-    "id": 20,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de não conseguir guardar um segredo até ao fim e ser o principal fofoqueiro da família?"
-  },
-  {
-    "id": 21,
-    "categoria": "Drama Leve",
-    "pergunta": "Quem é mais provável de inventar a pior desculpa possível para não comparecer a um almoço de domingo?"
-  }
+  { "id": 1, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de rir de uma piada que não percebeu absolutamente nada?" },
+  { "id": 2, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de trocar misteriosamente de camisa a meio de uma festa?" },
+  { "id": 3, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de deixar as meias sujas espalhadas pela casa?" },
+  { "id": 4, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de cozinhar um prato simples e sujar todas as panelas da cozinha?" },
+  { "id": 5, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de passar a festa inteira agarrado ao telemóvel?" },
+  { "id": 6, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de começar a montar um móvel do IKEA sem ler as instruções?" },
+  { "id": 7, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de demorar duas horas a arranjar-se?" },
+  { "id": 8, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de se perder no caminho para um restaurante conhecido?" },
+  { "id": 9, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de comprar coisas inúteis na internet?" },
+  { "id": 10, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de ressonar que nem um trator?" },
+  { "id": 11, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de perder as chaves de casa?" },
+  { "id": 12, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de dar graxa à sogra descaradamente?" },
+  { "id": 13, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de andar nu pela casa e esquecer-se da janela aberta?" },
+  { "id": 14, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de fazer uma cena de ciúmes desnecessária em público?" },
+  { "id": 15, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de ter instalado o Tinder \"só para ver como era\"?" },
+  { "id": 16, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de reaproveitar um presente que recebeu e oferecê-lo a outra pessoa?" },
+  { "id": 17, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de riscar o carro a estacionar e culpar um \"poste invisível\"?" },
+  { "id": 18, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de começar uma discussão política?" },
+  { "id": 19, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de deixar a toalha molhada em cima da cama?" },
+  { "id": 20, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de beber água diretamente da garrafa do frigorífico em outra casa?" },
+  { "id": 21, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de tratar o cão ou o gato melhor do que o próprio parceiro?" },
+  { "id": 22, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de pesquisar pelos próprios sintomas na internet e achar que tem os dias contados?" },
+  { "id": 23, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de gastar a água quente toda num só banho?" },
+  { "id": 24, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de fingir que não está em casa quando tocam à campainha?" },
+  { "id": 25, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de ficar amigo do empregado de mesa até ao fim do jantar?" },
+  { "id": 26, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de fazer contas aos cêntimos na hora de dividir a fatura?" },
+  { "id": 27, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de mandar um spoiler do final de uma série que os outros ainda estão a ver?" },
+  { "id": 28, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de acenar de volta para alguém na rua que afinal estava a acenar para outra pessoa?" },
+  { "id": 29, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de criar uma discussão no supermercado porque alguém passou à frente na fila?" },
+  { "id": 30, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de não ouvir praticamente nada num jantar de grupo?" },
+  { "id": 31, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de beber um copo e ficar alegre?" },
+  { "id": 32, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de trocar de clube por causa do namorado/a?" },
+  { "id": 33, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de confundir uns calções com umas cuecas?" },
+  { "id": 34, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de tatuar as iniciais do parceiro/a?" },
+  { "id": 35, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de ficar numa fila de 2 horas para comer um pão com chouriço?" },
+  { "id": 36, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de voltar a dormir na cama que não fez o dia todo?" },
+  { "id": 37, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de dizer \"igualmente\" quando o empregado diz \"bom apetite\"?" },
+  { "id": 38, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de levar o telemóvel para a sanita e ficar lá uma hora?" },
+  { "id": 39, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de sujar uma camisola branca depois de a vestir?" },
+  { "id": 40, "categoria": "Caos Familiar", "pergunta": "Quem é mais provável de ter um fetiche que não tem coragem de contar a ninguém?" }
 ]

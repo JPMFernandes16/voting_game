@@ -1,15 +1,30 @@
-/* Variáveis Globais (Dark Mode) */
+/* ==========================================================================
+   Variáveis Globais / Global Variables (Design System & Timings)
+   ========================================================================== */
 :root {
+    /* Cores da Interface / UI Colors */
     --bg-dark: #12141c;
-    --bg-gradient: linear-gradient(135deg, #12141c 0%, #1a1d28 100%);
-    --text-main: #f8f9fa;
+    --bg-gradient: linear-gradient(-45deg, #12141c, #1a1d28, #2b1d24, #12141c);
+    
+    /* Tom ligeiramente mais creme/cinza para não cansar a vista na TV (Anti-Halo) */
+    --text-main: #f0f2f5; 
     --text-muted: #a0a5b5;
+    
     --accent: #ff3366;
     --accent-hover: #e02052;
-    --font-main: 'Inter', sans-serif;
+    --card-bg: #1e2233;
+    
+    /* Tipografia / Typography */
+    --font-main: 'Inter', system-ui, sans-serif;
+    
+    /* Sincronização de Animação (Deve corresponder ao tempo no app.js) */
+    --transition-duration: 600ms; /* Aumentado ligeiramente para um flip 3D mais dramático */
+    --transition-easing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Reset Básico para garantir que tudo fica igual em qualquer browser */
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -19,86 +34,214 @@
 body {
     font-family: var(--font-main);
     background: var(--bg-gradient);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
     color: var(--text-main);
     height: 100vh;
-    overflow: hidden; /* Esconde barras de scroll na TV */
+    overflow: hidden; /* Fundamental para Smart TVs */
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none; /* Evita que o texto seja selecionado por engano com duplo clique */
+    user-select: none;
+    transition: cursor 0.3s ease;
 }
 
-/* Container principal centrado para ecrãs 16:9 */
+/* Classe dinâmica injetada pelo JS para ocultar o cursor após inatividade */
+body.hide-cursor {
+    cursor: none !important;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ==========================================================================
+   Layout Principal e Overscan (TV Safe Area)
+   ========================================================================== */
 .tv-container {
+    /* Margens seguras (90vw / 85vh) garantem que a TV não corta conteúdo */
     width: 90vw;
-    max-width: 1800px;
-    height: 80vh;
+    max-width: 1600px; 
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
+    position: relative;
 }
 
-/* Cartão da pergunta e configurações da animação */
-.question-card {
+/* ==========================================================================
+   Fase 1: Lobby Simplificado (Ecrã Inicial)
+   ========================================================================== */
+#lobby-screen {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 3rem;
     width: 100%;
-    /* Transições suaves para quando a pergunta muda */
-    transition: opacity 0.4s ease-out, transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Classes controladas pelo JavaScript para fazer a pergunta aparecer/desaparecer */
-.fade-out {
+.lobby-header .game-title {
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    letter-spacing: -2px;
+}
+
+.lobby-header .game-subtitle {
+    color: var(--accent);
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Fase 2: Arena de Jogo e Animação 3D (Card Flip)
+   ========================================================================== */
+.game-arena {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* Perspetiva cria a profundidade necessária para o efeito 3D */
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-card {
+    position: absolute;
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 4rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    
+    will-change: transform, opacity;
+    transition: transform var(--transition-duration) var(--transition-easing),
+                opacity var(--transition-duration) var(--transition-easing);
+    
+    /* Estado Inicial: Virado 90 graus (Invisível, de lado) */
+    transform: rotateY(90deg) scale(0.9);
     opacity: 0;
-    transform: translateY(20px) scale(0.98);
+    pointer-events: none;
 }
 
-.fade-in {
+.question-card.active {
+    /* Estado Visível: Virado para a frente */
+    transform: rotateY(0deg) scale(1);
     opacity: 1;
-    transform: translateY(0) scale(1);
+    pointer-events: auto;
 }
 
-/* Design da etiqueta (badge) da categoria */
-.category-wrapper {
-    margin-bottom: 1rem;
+.question-card.exit {
+    /* Estado de Saída: Continua a virar até -90 graus */
+    transform: rotateY(-90deg) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
 }
 
+/* ==========================================================================
+   Tipografia Dinâmica e Badges
+   ========================================================================== */
 .badge {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.3);
     color: var(--text-muted);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding: 0.8rem 2rem;
     border-radius: 50px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 3rem;
 }
 
-/* Cores específicas para cada tipo de pergunta */
-.cat-caos { border-bottom: 3px solid #ff9f43; color: #ff9f43; }
-.cat-humor { border-bottom: 3px solid #00d2d3; color: #00d2d3; }
-.cat-drama { border-bottom: 3px solid #ff6b6b; color: #ff6b6b; }
+/* Fallback Genérico para categorias desconhecidas */
+.badge[class*="cat-"] { border-bottom: 3px solid var(--accent); }
 
-/* Texto principal: Usa clamp() para ser responsivo e nunca quebrar a interface */
-#pergunta-texto {
-    font-size: clamp(2.5rem, 5vw, 6rem); 
+/* Cores específicas */
+.cat-caos-familiar { border-bottom-color: #ff9f43; color: #ff9f43; }
+.cat-humor { border-bottom-color: #00d2d3; color: #00d2d3; }
+.cat-drama-leve { border-bottom-color: #ff6b6b; color: #ff6b6b; }
+
+.question-text {
     font-weight: 900;
     line-height: 1.3;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    max-width: 90%;
-    margin: 0 auto;
+    white-space: pre-line;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Zona inferior com as instruções e o botão */
+/* Utilitários geridos pelo JS consoante o tamanho do texto */
+.text-xl { font-size: clamp(3.5rem, 5vw, 5.5rem); } /* Perguntas muito curtas */
+.text-lg { font-size: clamp(2.8rem, 4vw, 4.5rem); } /* Perguntas normais */
+.text-md { font-size: clamp(2rem, 3vw, 3.5rem); }   /* Perguntas longas */
+.text-sm { font-size: clamp(1.5rem, 2vw, 2.5rem); } /* Textos enormes */
+
+/* ==========================================================================
+   Ecrã de Pausa / Intervalo
+   ========================================================================== */
+.overlay-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(18, 20, 28, 0.7);
+    backdrop-filter: blur(20px); /* Desfoque intenso para esconder o cartão */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: fadeIn 0.4s forwards;
+}
+
+.pause-content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4rem 6rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pause-content h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.pause-content p {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================================================================
+   Botões Base e Utilitários
+   ========================================================================== */
 .instructions-footer {
-    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,37 +251,62 @@ body {
 .instructions-footer p {
     color: var(--text-muted);
     font-size: 1.2rem;
-    opacity: 0.7;
+    opacity: 0.9;
 }
 
 .key-hint {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
     font-weight: bold;
     color: var(--text-main);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.3);
 }
 
-/* Botão principal (caso usem um rato ou comando da TV com ponteiro) */
+.mt-2 { margin-top: 2rem; display: inline-block; }
+
 .tv-button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 1.2rem 3rem;
-    font-size: 1.5rem;
-    font-weight: 700;
     font-family: var(--font-main);
-    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(255, 51, 102, 0.3);
     transition: all 0.2s ease;
 }
 
-.tv-button:hover {
+.tv-button.primary {
+    background-color: var(--accent);
+    color: white;
+    padding: 1.2rem 3rem;
+    box-shadow: 0 8px 25px rgba(255, 51, 102, 0.4);
+    animation: pulseGlow 2.5s infinite; 
+}
+
+.tv-button.primary:hover {
     background-color: var(--accent-hover);
-    transform: scale(1.05); /* Pequeno zoom ao passar o rato */
+    transform: translateY(-5px) scale(1.02);
+}
+
+.tv-button.secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    padding: 1.2rem 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tv-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .tv-button:active {
-    transform: scale(0.95); /* Efeito de clique */
+    transform: scale(0.95);
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.6); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 51, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
 }
